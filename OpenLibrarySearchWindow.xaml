@@ -1,0 +1,39 @@
+﻿<Window x:Class="DadLibrarySystem.OpenLibrarySearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DadLibrarySystem"
+        mc:Ignorable="d"
+        Title="OpenLibrarySearchWindow" Height="450" Width="898">
+    <Grid>
+        <StackPanel Margin="10" VerticalAlignment="Stretch">
+            <Label Content="Search Term:"/>
+            <TextBox x:Name="txtSearchTerm" Width="546" Margin="0,0,0,10" Height="Auto"/>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button Content="Search" Click="btnSearch_Click" Width="100" Margin="5"/>
+                <Button Content="Clear" Click="btnClear_Click" Width="100" Margin="5"/>
+                <Button Content="Transfer to Library" Click="btnTransfer_Click" Width="100" Margin="5"/>
+                <Button Content="Return to Main" Click="btnReturn_Click" Width="100" Margin="5"/>
+            </StackPanel>
+
+            <ScrollViewer>
+                <ListView x:Name="resultListView" Margin="0,10,0,0" VirtualizingPanel.IsVirtualizing="False">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Title" DisplayMemberBinding="{Binding title}" Width="200"/>
+                            <GridViewColumn Header="Author" DisplayMemberBinding="{Binding author_name[0]}" Width="150"/>
+                            <GridViewColumn Header="Subject" DisplayMemberBinding="{Binding subject[0]}" Width="150"/>
+                            <GridViewColumn Header="ISBN" DisplayMemberBinding="{Binding isbn[0]}" Width="150"/>
+                            <GridViewColumn Header="Call Num" DisplayMemberBinding="{Binding ddc[0]}" Width="150"/>
+
+                            <!-- Add more columns based upon dad's inputs -->
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,111 @@
+﻿<Window x:Class="DadLibrarySystem.ManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DadLibrarySystem"
+        mc:Ignorable="d"
+        Title="ManagementWindow" Height="600" Width="798"
+        Loaded="ManagementWindow_Loaded">
+    <Grid>
+        <!-- Left side panel -->
+        <StackPanel Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="ISBN10:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtISBN10" Height="27" Width="150" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="ISBN13:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtISBN13" Height="27" Width="150" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Title:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtTitle" Height="27" Width="341" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Edition:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtEdition" Height="27" Width="127" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Author:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtAuthor" Height="27" Width="325" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Genre:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <ComboBox x:Name="comboGenre" ItemsSource="{Binding Genre}" Height="27" Width="233" Margin="0,0,0,10" VerticalAlignment="Top">
+                    <!--ComboBoxItem Content="Fiction" /-->
+                    <!--ComboBoxItem Content="NonFiction"/-->
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Subject:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtSubject" Height="27" Width="325" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Key Words:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtKeyWords" Height="59" Width="308" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <!-- Right side panel -->
+        <StackPanel Margin="399,0,10,20">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Call Number:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtCallNum" Height="27" Width="208" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Location:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtLocation" Height="27" Width="230" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Copies:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtCopies" Height="27" Width="110" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Last Read:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <DatePicker x:Name="dpDate" Height="27" Width="230" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Loaned Out:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <RadioButton x:Name="rbYes" Content="Yes" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                <RadioButton x:Name="rbNo" Content="No" IsChecked="True" VerticalAlignment="Center"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Loan Info:" Height="27" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtLoanInfo" Height="67" Width="310" Margin="0,0,0,10" VerticalAlignment="Top"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <!-- Buttons Left -->
+        <StackPanel Margin="10,424,571,0" VerticalAlignment="Top" Height="121">
+            <Button Content="Clear" Name ="btnClear" Click="BtnClear_Click" Width="100" Margin="0,0,0,10"/>
+            <Button Content="Find by Title" Name="btnFindTitle" Click="btnFindTitle_Click" Width="100" Margin="0,0,0,10"/>
+            <Button Content="Find by ISBN10" Name ="btnFindISBN10"  Click="btnFindISBN10_Click" Width="100" Margin="0,0,0,10"/>
+            <Button Content="Delete" Name ="btnDelete" Click="btnDelete_Click" Width="100" Margin="0,0,0,10"/>
+        </StackPanel>
+
+        <!-- Buttons Right -->
+        <StackPanel Margin="212,424,372,0" VerticalAlignment="Top" Height="121">
+            <Button Content="Submit New Book" Name="btnSubmitNew" Click="btnSubmitNew_Click" Width="100" Margin="0,0,0,10"/>
+            <Button Content="Update Book" Name="btnUpdateBook" Click="btnUpdateBook_Click" Width="100" Margin="0,0,0,10"/>
+            <Button Content="Return to Main" Name="btnReturn" Click="btnReturn_Click" Width="100" Margin="0,0,0,10"/>
+        </StackPanel>
+        
+        <!-- ListView -->
+    </Grid>
+</Window>
